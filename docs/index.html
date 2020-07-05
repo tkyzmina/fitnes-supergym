@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SuperGym</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__top">
+        <a class="header__logo">
+          <svg class="header__logo-icon logo__icon" width="89" height="20">
+            <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <a class="header__tel" href="tel:+88005555555">8-800-555-55-55</a>
+      </div>
+      <div class="header__main">
+        <h1 class="visually-hidden">Фитнес центр SuperGym</h1>
+        <div class="header__left">
+          <p class="header__city">Омск</p>
+          <p class="header__title">Фитнес</p>
+          <div class="header__sub-wrapper">
+            <dl class="header__features">
+              <dd class="header__item">Тренажёрный зал</dd>
+              <dd class="header__item">Групповые занятия</dd>
+              <dd class="header__item">Кардио-зона</dd>
+            </dl>
+            <p class="header__title">центр</p>
+          </div>
+
+          <a class="header__button button" href="#">Купить абонемент</a>
+
+        </div>
+        <div class="header__image">
+          <picture>
+            <!-- 1х: 324px; 2x: 648px -->
+            <source type="image/webp" media="(max-width: 1023px)" srcset="img/main-tablet.webp 1x, img/main-tablet@2x.webp 2x">
+            <!-- 1х: 500px; 2x: 1000px -->
+            <source type="image/webp" srcset="img/main-desktop.webp, img/main-desktop@2x.webp 2x">
+
+            <!-- 1х: 324px; 2x: 648px -->
+            <source media="(max-width: 1023px)" srcset="img/main-tablet.jpg 1x, img/main-tablet@2x.jpg 2x">
+            <!-- 1х: 500px; 2x: 1000px -->
+            <img class="header__img" src="img/main-desktop.jpg" srcset="img/main-desktop@2x.jpg 2x" alt="Изображение главного тренера Фитнес центра SuperGym" width="500" height="556">
+          </picture>
+        </div>
+
+        <ul class="header__socials">
+          <li class="header__fb">
+            <a href="https:/facebook.com">fb</a>
+          </li>
+          <li class="header__vk">
+            <a href="https:/vk.com">vk</a>
+          </li>
+          <li class="header__ig">
+            <a href="https:/instagram.com">ig</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="equipment">
+      <div class="equipment__wrapper">
+        <h2 class="equipment__header">Тренажерный зал</h2>
+        <p class="equipment__desc">Просторный зал площадью 900 кв/м</p>
+        <p class="equipment__text">Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела
+          и
+          здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов.</p>
+        <p class="equipment__text equipment__text--hide">В зале расположены отдельная зона для Crossfit и кардио-зона с
+          40 тренажерами. Также
+          в фитнес центре есть
+          несколько оборудованных залов для различных видов групповых занятий.</p>
+      </div>
+      <div class="equipment__image">
+        <picture>
+          <!-- 1х: 320px; 2x: 640px -->
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/equipment-mobile.webp, img/equipment-mobile@2x.webp 2x">
+          <!-- 1х: 678px; 2x: 1356px -->
+          <source type="image/webp" media="(max-width: 1023px)" srcset="img/equipment-tablet.webp, img/equipment-tablet@2x.webp 2x">
+          <!-- 1х: 660px; 2x: 1220px -->
+          <source type="image/webp" srcset="img/equipment-desktop.webp, img/equipment-desktop@2x.webp 2x">
+
+          <!-- 1х: 320px; 2x: 640px -->
+          <source media="(max-width: 767px)" srcset="img/equipment-mobile.jpg 1x, img/equipment-mobile@2x.jpg 2x">
+          <!-- 1х: 678px; 2x: 1356px -->
+          <source media="(max-width: 1023px)" srcset="img/equipment-tablet.jpg 1x, img/equipment-tablet@2x.jpg 2x">
+          <!-- 1х: 660px; 2x: 1220px -->
+          <img src="img/equipment-desktop.jpg" srcset="img/equipment-desktop@2x.jpg 2x" alt="Изображение тренажерного зала" width="660" height="401">
+        </picture>
+        <div class="equipment__video">
+          <a href="#" aria-label="Воспроизвести видео"></a>
+        </div>
+      </div>
+
+      <!-- <div class="equipment__video"> -->
+      <!-- <picture> -->
+      <!-- 1х: 320px; 2x: 640px -->
+      <!-- <source type="image/webp" srcset="img/video-preview-mobile.webp, img/video-preview-mobile@2x.webp 2x"> -->
+      <!-- 1х: 266px; 2x: 532px -->
+      <!-- <source type="image/webp" srcset="img/video-preview-tablet.webp, img/video-preview-tablet@2x.webp 2x"> -->
+      <!-- 1х: 364px; 2x: 728px -->
+      <!-- <source type="image/webp" srcset="img/video-preview.webp, img/video-preview@2x.webp 2x"> -->
+
+      <!-- 1х: 320px; 2x: 640px -->
+      <!-- <source media="(max-width: 767px)"
+            srcset="img/video-preview-mobile.png 1x, img/video-preview-mobile@2x.jpg 2x"> -->
+      <!-- 1х: 266px; 2x: 532px -->
+      <!-- <source media="(max-width: 1023px)"
+            srcset="img/video-preview-tablet.png 1x, img/video-preview-tablet@2x.jpg 2x"> -->
+      <!-- 1х: 364px; 2x: 728px -->
+      <!-- <img src="img/video-preview.png" srcset="img/video-preview@2x.png 2x"
+            alt="Изображение превью видео о тренажерном зале" width="364" height="228"> -->
+      <!-- </picture> -->
+      <!-- </div> -->
+    </section>
+  </main>
+</body>
+
+</html>
