@@ -34,7 +34,7 @@
             <p class="header__title">центр</p>
           </div>
 
-          <a class="header__button button" href="#">Купить абонемент</a>
+          <a class="header__button button" href="#tickets">Купить абонемент</a>
 
         </div>
         <div class="header__image">
@@ -99,7 +99,7 @@
         </div>
       </div>
     </section>
-    <section class="tickets">
+    <section class="tickets" id="tickets">
       <div class="tickets__wrapper">
         <h2 class="tickets__title">Абонементы</h2>
         <ul class="tickets__choose">
@@ -110,17 +110,52 @@
         <ul class="tickets__list one-month">
           <li class="tickets__item">
             <h3>С тренером</h3>
-            <p>12 занятий</p>
-            <p>5000</p>
+            <p class="tickets__quantity">12 занятий</p>
+            <p class="tickets__back">5000</p>
             <div class="tickets__price">
               <p>5000</p>
               <span>&#x20bd;</span>
             </div>
             <a class="tickets__buy button" href="#">купить абонемент</a>
-
+          </li>
+          <li class="tickets__item">
+            <h3>Дневной</h3>
+            <p class="tickets__quantity">с 8:00 до 17:00 </p>
+            <p class="tickets__back">1700</p>
+            <div class="tickets__price">
+              <p>1700</p>
+              <span>&#x20bd;</span>
+            </div>
+            <a class="tickets__buy button" href="#">купить абонемент</a>
+          </li>
+          <li class="tickets__item">
+            <h3>Полный день</h3>
+            <p class="tickets__quantity">с 8:00 до 22:00 </p>
+            <p class="tickets__back">2700</p>
+            <div class="tickets__price">
+              <p>2700</p>
+              <span>&#x20bd;</span>
+            </div>
+            <a class="tickets__buy button" href="#">купить абонемент</a>
           </li>
         </ul>
       </div>
+    </section>
+    <section class="competitions">
+      <div class="competitions__about">
+        <div class="competitions__wrapper">
+          <p class="competitions__super">SUPER GAMES</p>
+          <div class="competitions__schedule">
+            <p class="competitions__rel">Дата</p>
+            <p class="competitions__time">7<span>Марта 2019</span></p>
+            <p class="competitions__rel">Время</p>
+            <p class="competitions__time">12:00</p>
+          </div>
+        </div>
+        <h2 class="competitions__title">Ежегодные соревнования по CrossFit</h2>
+        <a href="#" class="competitions__button">заполнить заявку</a>
+      </div>
+      <div class="competitions__image"></div>
     </section>
   </main>
 </body>
