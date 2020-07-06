@@ -27,7 +27,7 @@
   margin: 0;
   margin-bottom: 35px;
   font-style: normal;
-  font-size: 700;
+  font-weight: 700;
   font-size: 49px;
   line-height: 49px;
   letter-spacing: 0.03em;
@@ -123,7 +123,7 @@
 
   &:hover {
     border: 7px solid transparent;
-    border-image: linear-gradient(#D10A42, #00359F);
+    border-image: linear-gradient(#d10a42, #00359f);
     border-image-slice: 1;
   }
 
@@ -233,7 +233,7 @@
 
 .tickets__item:hover .tickets__buy {
   padding: 27px 45px;
-  background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
+  background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
   color: $white-text;
   border: none;
 }
@@ -241,6 +241,7 @@
 @media (max-width: 1023px) {
   .tickets__wrapper {
     padding-top: 99px;
+    margin-bottom: 61px;
 
     &::after {
       bottom: 36px;
@@ -248,7 +249,6 @@
       width: 289px;
       height: 345px;
       background: url("../img/bumper-tablet.png");
-
     }
   }
 
@@ -301,7 +301,7 @@
   .tickets__price {
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
   }
 }
 
@@ -317,7 +317,7 @@
     min-width: 289px;
     margin-bottom: 48px;
 
-    &:after {
+    &::after {
       bottom: -14px;
       width: 100%;
     }
@@ -325,7 +325,9 @@
 
   .tickets__wrapper {
     min-width: 320px;
+    margin-bottom: 70px;
     padding: 69px 15px;
+    padding-bottom: 40px;
 
     &::after {
       display: none;
@@ -388,5 +390,4 @@
   .tickets__price {
     top: 41%;
   }
-
 }

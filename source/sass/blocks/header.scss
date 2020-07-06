@@ -1,5 +1,5 @@
 .header {
-  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #B80027 -46.69deg, #003D85 32.24deg, #B80027 313.31deg, #003D85 392.24deg);
+  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
 }
 
 .header__wrapper {
@@ -84,30 +84,30 @@
   text-align: right;
   color: $white-text;
   text-shadow:
-    -0 -2px 0 #FFFFFF,
-    0 -2px 0 #FFFFFF,
-    -0 2px 0 #FFFFFF,
-    0 2px 0 #FFFFFF,
-    -2px -0 0 #FFFFFF,
-    2px -0 0 #FFFFFF,
-    -2px 0 0 #FFFFFF,
-    2px 0 0 #FFFFFF,
-    -1px -2px 0 #FFFFFF,
-    1px -2px 0 #FFFFFF,
-    -1px 2px 0 #FFFFFF,
-    1px 2px 0 #FFFFFF,
-    -2px -1px 0 #FFFFFF,
-    2px -1px 0 #FFFFFF,
-    -2px 1px 0 #FFFFFF,
-    2px 1px 0 #FFFFFF,
-    -2px -2px 0 #FFFFFF,
-    2px -2px 0 #FFFFFF,
-    -2px 2px 0 #FFFFFF,
-    2px 2px 0 #FFFFFF,
-    -2px -2px 0 #FFFFFF,
-    2px -2px 0 #FFFFFF,
-    -2px 2px 0 #FFFFFF,
-    2px 2px 0 #FFFFFF;
+    -0 -2px 0 #ffffff,
+    0 -2px 0 #ffffff,
+    -0 2px 0 #ffffff,
+    0 2px 0 #ffffff,
+    -2px -0 0 #ffffff,
+    2px -0 0 #ffffff,
+    -2px 0 0 #ffffff,
+    2px 0 0 #ffffff,
+    -1px -2px 0 #ffffff,
+    1px -2px 0 #ffffff,
+    -1px 2px 0 #ffffff,
+    1px 2px 0 #ffffff,
+    -2px -1px 0 #ffffff,
+    2px -1px 0 #ffffff,
+    -2px 1px 0 #ffffff,
+    2px 1px 0 #ffffff,
+    -2px -2px 0 #ffffff,
+    2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff,
+    2px 2px 0 #ffffff,
+    -2px -2px 0 #ffffff,
+    2px -2px 0 #ffffff,
+    -2px 2px 0 #ffffff,
+    2px 2px 0 #ffffff;
 }
 
 .header__features {
@@ -180,7 +180,7 @@
   &:hover {
     padding: 24px 58px;
     // color: $darken-text;
-    background: linear-gradient(111.72deg, #ED0233 17.6%, #003EB7 95.31%);
+    background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
   }
 }
@@ -261,7 +261,6 @@
       padding-left: 34px;
       padding-right: 34px;
     }
-
   }
 }
 
