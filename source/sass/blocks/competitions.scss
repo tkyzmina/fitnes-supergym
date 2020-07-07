@@ -2,6 +2,7 @@
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -145,7 +146,7 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .competitions {
     max-width: 768px;
     padding-left: 45px;

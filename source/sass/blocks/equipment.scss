@@ -91,7 +91,7 @@
   color: $dark-text;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .equipment {
     padding-top: 98px;
     padding-left: 45px;
@@ -152,7 +152,10 @@
 
   .equipment__video a {
     top: 28%;
-    left: 36%;
+    // left: 36%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
     width: 73px;
     height: 73px;
   }
@@ -215,10 +218,5 @@
       width: 100%;
       height: 167px;
     }
-  }
-
-  .equipment__video a {
-    top: 28%;
-    left: 39%;
   }
 }

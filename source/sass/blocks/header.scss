@@ -179,13 +179,12 @@
 
   &:hover {
     padding: 24px 58px;
-    // color: $darken-text;
     background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .header__wrapper {
     padding-top: 37px;
     padding-left: 45px;
@@ -298,14 +297,14 @@
   }
 
   .header__left {
-    width: 50%;
-    margin-right: 10px;
+    max-width: 70%;
+    min-width: 290px;
+    margin: 0 auto;
     padding-top: 71px;
   }
 
   .header__image {
-    width: 50%;
-    align-self: center;
+    display: none;
   }
 
   .header__sub-wrapper {
@@ -322,18 +321,6 @@
       height: 63px;
       padding-top: 26px;
       padding-bottom: 27px;
-      // padding-right: 27px;
     }
-  }
-}
-
-@media (max-width: 425px) {
-  .header__image {
-    display: none;
-  }
-
-  .header__left {
-    width: 100%;
-    margin-right: 0;
   }
 }
