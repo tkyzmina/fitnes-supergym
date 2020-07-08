@@ -1,6 +1,6 @@
 .coaches {
   max-width: 1366px;
-  margin: 0 auto 120px;
+  margin: 0 auto 20px;
   padding: 78px 103px 100px;
 }
 
@@ -171,6 +171,7 @@
 @media (max-width: 1199px) {
   .coaches {
     padding-top: 59px;
+    padding-bottom: 80px;
   }
 
   .coaches__wrapper {
@@ -215,6 +216,7 @@
   .coaches {
     max-width: 320px;
     padding-top: 30px;
+    padding-bottom: 50px;
     padding-left: 45px;
     padding-right: 45px;
   }
