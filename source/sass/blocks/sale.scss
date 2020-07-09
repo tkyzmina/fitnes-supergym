@@ -1,5 +1,7 @@
 .sale {
   padding-top: 118px;
+  padding-bottom: 80px;
+  margin-bottom: 10px;
 }
 
 .sale__wrapper {
@@ -173,6 +175,7 @@
 @media (max-width: 1199px) {
   .sale {
     padding-top: 99px;
+    padding-bottom: 61px;
   }
 
   .sale__wrapper {
@@ -233,6 +236,7 @@
 @media (max-width: 767px) {
   .sale {
     padding-top: 70px;
+    padding-bottom: 30px;
   }
 
   .sale__wrapper {

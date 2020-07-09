@@ -1,0 +1,172 @@
+.footer {
+  padding-top: 42px;
+  padding-bottom: 36px;
+  background: #030a1a;
+}
+
+.footer__logo-icon {
+  fill: $white-text;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer__list,
+.footer__socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: -4px;
+}
+
+.footer__list {
+  display: flex;
+  margin-left: 61px;
+  margin-top: -4px;
+}
+
+.footer__link {
+  margin: 0;
+  margin-right: 40px;
+  padding: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $white-text;
+
+  &:hover {
+    color: $darken-text;
+  }
+
+  &:active {
+    color: #8a103f;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: space-between;
+  min-width: 110px;
+}
+
+.socials__svg {
+  fill: $white-text;
+
+  &:hover {
+    fill: $darken-text;
+  }
+
+  &:active {
+    fill: #8a103f;
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer__wrapper {
+    min-width: 768px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .footer__logo-icon {
+    width: 82px;
+    height: 18px;
+  }
+
+  .footer__link {
+    margin-right: 30px;
+  }
+
+  .footer__list {
+    margin-top: 0;
+    margin-left: 45px;
+  }
+
+  .footer__socials {
+    margin-top: 0;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 47px;
+    padding-bottom: 43px;
+  }
+
+  .footer__logo {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+  }
+
+  .footer__logo-icon {
+    width: 68px;
+    height: 15px;
+  }
+
+  .footer__wrapper {
+    position: relative;
+    flex-direction: column;
+    min-width: 290px;
+    padding: 0 15px;
+  }
+
+  .footer__nav {
+    width: 100%;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 200px;
+    height: 135px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__link {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .footer__socials {
+    width: 143px;
+    align-items: center;
+  }
+
+  .socials__svg--vk {
+    width: 32px;
+    height: 17px;
+  }
+
+  .socials__svg--insta {
+    width: 27px;
+    height: 27px;
+  }
+
+  .socials__svg--fb {
+    width: 14px;
+    height: 27px;
+  }
+
+  .footer__item {
+    margin-bottom: 17px;
+    margin-right: 15px;
+    width: 50%;
+
+    &:first-child {
+      padding-top: 41px;
+    }
+  }
+}

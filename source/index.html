@@ -315,7 +315,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
     </section>
@@ -344,17 +343,141 @@
               <h3>Скидка 20%</h3>
               <p>Корпоративный фитнес с командой</p>
             </div>
-
             <a href="#">подробнее</a>
           </div>
         </div>
       </div>
+    </section>
+    <section class="review">
+      <h2 class="review__title">Отзывы</h2>
+      <div class="review__wrapper">
 
+        <div class="review__item">
+          <div class="review__image">
+            <picture>
+              <!-- 1х: 68px; 2x: 136px -->
+              <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/review-mobile.webp 1x, img/review-mobile@2x.webp 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <source type="image/webp" srcset="img/review-desktop.webp 1x, img/review-desktop@2x.webp 2x">
+
+              <!-- 1х: 68px; 2x: 136px -->
+              <source media="(max-width: 767px)" src="img/review-mobile.png" srcset="img/review-mobile@2x.png 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <img src="img/review-desktop.png" alt="Изображение Анна Орлова" srcset="img/review-desktop@2x.png 2x">
+            </picture>
+          </div>
+          <div class="review__info">
+            <p class="review__name">Анна Орлова</p>
+            <p class="review__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры
+              обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+          </div>
+        </div>
+
+        <div class="review__item">
+          <div class="review__image">
+            <picture>
+              <!-- 1х: 68px; 2x: 136px -->
+              <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/review-mobile.webp 1x, img/review-mobile@2x.webp 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <source type="image/webp" srcset="img/review-desktop.webp 1x, img/review-desktop@2x.webp 2x">
+
+              <!-- 1х: 68px; 2x: 136px -->
+              <source media="(max-width: 767px)" src="img/review-mobile.png" srcset="img/review-mobile@2x.png 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <img src="img/review-desktop.png" alt="Изображение Анна Орлова" srcset="img/review-desktop@2x.png 2x">
+            </picture>
+          </div>
+          <div class="review__info">
+            <p class="review__name">Анна Иванова</p>
+            <p class="review__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры
+              обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+          </div>
+        </div>
+
+        <div class="review__item">
+          <div class="review__image">
+            <picture>
+              <!-- 1х: 68px; 2x: 136px -->
+              <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/review-mobile.webp 1x, img/review-mobile@2x.webp 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <source type="image/webp" srcset="img/review-desktop.webp 1x, img/review-desktop@2x.webp 2x">
+
+              <!-- 1х: 68px; 2x: 136px -->
+              <source media="(max-width: 767px)" src="img/review-mobile.png" srcset="img/review-mobile@2x.png 2x">
+              <!-- 1х: 80px; 2x: 160px -->
+              <img src="img/review-desktop.png" alt="Изображение Анна Орлова" srcset="img/review-desktop@2x.png 2x">
+            </picture>
+          </div>
+          <div class="review__info">
+            <p class="review__name">Анна Сидорова</p>
+            <p class="review__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто, тренажеры
+              обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+          </div>
+        </div>
+
+      </div>
     </section>
   </main>
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <a class="footer__logo" href="#">
+        <svg class="footer__logo-icon" width="89" height="20">
+          <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+        </svg>
+      </a>
+      <nav class="footer__nav">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link" href="#">Услуги</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Абонементы</a>
+          </li>
+          <li class="footer__item"><a class="footer__link" href="#">Акции</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Тренеры</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Расписание</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="footer__socials socials">
+        <li class="socials__item">
+          <a class="socials__link socials__link--vk" href="https://vk.com" aria-label="cсылка на сраницу в Vkontakte">
+            <svg class="socials__svg socials__svg--vk" width="24" height="13">
+              <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="socials__item">
+          <a class="socials__link socials__link--insta" href="https://instagram.com"
+            aria-label="cсылка на сраницу в Instagram">
+            <svg class="socials__svg socials__svg--insta" width="24" height="24">
+              <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--fb" href="https://facebook.com"
+            aria-label="cсылка на сраницу в Facebook">
+            <svg class="socials__svg socials__svg--fb" width="12" height="24">
+              <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="js/slick.min.js"></script>
-  <script src="js/script.js"></script> -->
+  <script src="js/script.js"></script>
 </body>
 
 </html>

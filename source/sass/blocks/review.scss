@@ -1,0 +1,197 @@
+.review {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.review__wrapper {
+  width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.review__title {
+  margin: 0;
+  margin-bottom: 52px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  font-family: "Bebas Neue", "Arial", sans-serif;
+  color: $dark-text;
+  text-align: center;
+}
+
+.review__item {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 62px;
+  padding-bottom: 57px;
+  background: #1C3374;
+  box-shadow: 0px 0px 40px rgba(28, 51, 116, 0.2);
+}
+
+.review__image {
+  width: 80px;
+  height: 80px;
+  margin-right: 28px;
+}
+
+.review__info {
+  width: 328px;
+}
+
+.review__name {
+  margin: 0;
+  margin-top: -8px;
+  margin-bottom: 13px;
+  padding: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $white-text;
+}
+
+.review__text {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $white-text;
+}
+
+// *******************стили для слайдера*******************/
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-slide {
+  width: 560px;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.review__wrapper {
+  position: relative;
+}
+
+.review__wrapper .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  z-index: 10;
+  font-size: 0;
+  border: none;
+  background: transparent;
+  width: 18px;
+  height: 32px;
+}
+
+.review__wrapper .slick-arrow:hover {
+  opacity: 0.4;
+}
+
+.review__wrapper .slick-arrow:active {
+  opacity: 1;
+}
+
+.slick-arrow.slick-prev {
+  left: 620px;
+  background-image: url("../img/icon-right.svg");
+  background-size: 100%;
+}
+
+.slick-arrow.slick-next {
+  right: 620px;
+  background-image: url("../img/icon-left.svg");
+  background-size: 100%;
+}
+
+@media (max-width: 1199px) {
+  .review {
+    width: 768px;
+  }
+
+  .review__wrapper {
+    width: 606px;
+  }
+
+  .review__title {
+    font-size: 42px;
+    line-height: 42px;
+    margin-bottom: 41px;
+  }
+
+  .slick-slide {
+    width: 566px;
+  }
+}
+
+@media (max-width: 767px) {
+  .review {
+    width: 320px;
+  }
+
+  .review__wrapper {
+    width: 266px;
+  }
+
+  .review__title {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 43px;
+  }
+
+  .review__item {
+    position: relative;
+    width: 226px;
+    padding: 56px 28px 10px;
+  }
+
+  .review__image {
+    position: absolute;
+    top: 40px;
+    left: 41px;
+  }
+
+  .review__name {
+    margin-bottom: 23px;
+    padding-left: 96px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .review__text {
+    text-align: center;
+  }
+
+
+  .slick-arrow.slick-prev {
+    left: 259px;
+  }
+
+  .slick-arrow.slick-next {
+    right: 259px;
+  }
+
+  .slick-slide {
+    width: 226px;
+  }
+
+
+
+}
