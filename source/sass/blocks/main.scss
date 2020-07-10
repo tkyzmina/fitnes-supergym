@@ -46,3 +46,34 @@ img {
 .footer-down {
   min-height: calc(100vh - 108px);
 }
+
+*::-webkit-input-placeholder {
+  color: $white-text;
+}
+
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: $white-text;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: $white-text;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $white-text;
+}
+
+*::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $white-text;
+}
+
+*::placeholder {
+  /* modern browser */
+  color: $white-text;
+}

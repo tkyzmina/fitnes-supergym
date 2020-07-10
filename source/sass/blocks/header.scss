@@ -1,5 +1,9 @@
+.header--ie11 {
+  background-image: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
+}
+
 .header {
-  background: conic-gradient(from 130.31deg at 16.03% 39.06%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
+  background: conic-gradient(from 130.31deg at 29% 38%, #b80027 -46.69deg, #003d85 32.24deg, #b80027 313.31deg, #003d85 392.24deg);
 }
 
 .header__wrapper {

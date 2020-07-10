@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header header--ie11">
     <div class="header__wrapper">
       <div class="header__top">
         <a class="header__logo">
@@ -417,7 +417,43 @@
               обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="promo">
+      <div class="promo__block">
+        <form class="promo__form form" method="POST" action="https://echo.htmlacademy.ru" name="contacts-form">
 
+          <h2>БЕСПЛАТНОЕ занятие</h2>
+          <div class="form__wrapper">
+            <label class="form__label">
+              <input type="text" name="user-name" required title="Только буквы" pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                placeholder="Имя">
+            </label>
+            <label class="form__label">
+              <input type="tel" name="user-tel" required pattern="[0-9]{11}" title="74991234567  - 11 цифр"
+                placeholder="Телефон">
+            </label>
+          </div>
+          <button class="form__button" type="submit">отправить</button>
+
+        </form>
+        <div class="promo__contacts">
+          <h2 class="promo__title">Контакты</h2>
+          <div class="promo__wrapper">
+            <div class="promo__left">
+              <h3>Адрес:</h3>
+              <p>г. Омск, ул. 60 лет Октября, 7</p>
+              <h3>График работы:</h3>
+              <p>Пн-Вс: с 8:00 до 22:00</p>
+            </div>
+            <div class="promo__right">
+              <h3>Телефон:</h3>
+              <a href="tel:+88005555555">8-800-555-55-55</a>
+              <h3>Email:</h3>
+              <a href="mailto:omsk@supergym.ru">omsk@supergym.ru</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

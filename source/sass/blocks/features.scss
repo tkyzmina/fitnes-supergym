@@ -71,11 +71,13 @@
   font-size: 71px;
   line-height: 106px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  background: linear-gradient(135deg, #d10a42 21%, #0041ca 59%, #1e5799 132%);
-  // -webkit-background-clip: text;
+  background: -webkit-linear-gradient(135deg, #d10a42 21%, #0041ca 59%, #1e5799 132%);
+  // background: linear-gradient(135deg, #d10a42 21%, #0041ca 59%, #1e5799 132%);
+  color: #b8012b;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #d10a42;
+  -webkit-background-clip: text;
+  // background-clip: text;
   text-transform: uppercase;
   text-align: left;
 }
