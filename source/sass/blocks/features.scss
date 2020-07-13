@@ -21,6 +21,7 @@
 }
 
 .features__hard {
+  position: relative;
   margin-bottom: 131px;
   padding-left: 68px;
   padding-right: 44px;
@@ -28,8 +29,8 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: 153px;
-    left: 62px;
+    bottom: -91px;
+    left: 41px;
     width: 340px;
     height: 2px;
     background: rgba(209, 10, 66, 0.2);
@@ -38,8 +39,8 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: 153px;
-    right: 62px;
+    bottom: -91px;
+    right: 41px;
     width: 340px;
     height: 2px;
     background: rgba(209, 10, 66, 0.2);
