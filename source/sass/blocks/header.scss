@@ -32,10 +32,10 @@
   &:hover {
     color: $darken-text;
   }
-}
 
-.header__logo-icon {
-  fill: $white-text;
+  &:active {
+    color: $white-text;
+  }
 }
 
 .header__city {
@@ -164,6 +164,10 @@
   &:hover {
     color: $darken-text;
   }
+
+  &:active {
+    color: $white-text;
+  }
 }
 
 .header__button {
@@ -186,6 +190,10 @@
     background: linear-gradient(111.72deg, #ed0233 17.6%, #003eb7 95.31%);
     border: none;
   }
+
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -196,10 +204,9 @@
     padding-bottom: 82px;
   }
 
-  .header__logo-icon {
+  .header__logo img {
     width: 82px;
     height: 17px;
-    fill: $white-text;
   }
 
   .header__tel {
@@ -275,7 +282,7 @@
     padding-bottom: 77px;
   }
 
-  .header__logo-icon {
+  .header__logo img {
     width: 68px;
     height: 15px;
   }

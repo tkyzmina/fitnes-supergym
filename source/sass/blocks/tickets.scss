@@ -1,9 +1,12 @@
 .tickets {
+  position: relative;
   background-color: #f8f9fc;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .tickets__wrapper {
-  position: relative;
+
   max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 120px;
@@ -15,11 +18,12 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: -40px;
-    right: -117px;
-    width: 321px;
-    height: 384px;
+    top: 58.2%;
+    right: 0;
+    width: 287px;
+    height: 494px;
     background: no-repeat url("../img/bumper-desktop.png");
+    background-position: center;
   }
 }
 
@@ -81,7 +85,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 41px;
+    top: 40px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -131,7 +135,7 @@
     margin-right: 0;
   }
 
-  &:nth-of-type(4n) {
+  &:nth-of-type(1n) {
     margin-left: 0;
   }
 
@@ -229,6 +233,10 @@
   text-align: center;
   text-transform: uppercase;
   border: 2px solid $dark-text;
+
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 .tickets__item:hover .tickets__buy {
@@ -390,4 +398,12 @@
   .tickets__price {
     top: 41%;
   }
+}
+
+.tickets__item--hide {
+  display: none;
+}
+
+.tickets__item--show {
+  display: block;
 }

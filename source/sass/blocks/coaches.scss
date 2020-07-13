@@ -20,7 +20,7 @@
 
 .coaches__wrapper {
   position: relative;
-  width: 1160px;
+  width: 1200px;
   margin-left: -20px;
   margin-right: -20px;
 }
@@ -149,22 +149,49 @@
   }
 }
 
-.coaches__button--left {
-  top: 130px;
-  left: -37px;
-  background-image: url("../img/icon-left.svg");
+// *******************стили для слайдера*******************/
+.coaches__wrapper .slick-list {
+  overflow: hidden;
 }
 
-.coaches__button--right {
-  top: 130px;
-  right: -37px;
-  background-image: url("../img/icon-right.svg");
+.coaches__list .slick-slide {
+  width: 260px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-@media (max-width: 1300px) {
+.coaches__wrapper .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  z-index: 10;
+  font-size: 0;
+  border: none;
+  background: transparent;
+  width: 18px;
+  height: 32px;
+}
+
+.coaches__wrapper .slick-arrow.slick-next {
+  right: 1220px;
+}
+
+.coaches__wrapper .slick-arrow.slick-prev {
+  left: 1220px;
+}
+
+@media (max-width: 1350px) {
   .coaches__wrapper {
     max-width: 860px;
     margin: 0 auto;
+  }
+
+  .coaches__wrapper .slick-arrow.slick-next {
+    right: 100%;
+  }
+
+  .coaches__wrapper .slick-arrow.slick-prev {
+    left: 102%;
   }
 }
 
@@ -209,6 +236,15 @@
 
   .coaches__button--right {
     right: -55px;
+  }
+
+  // *******************стили для слайдера*******************/
+  .coaches__wrapper .slick-arrow.slick-next {
+    right: 630px;
+  }
+
+  .coaches__wrapper .slick-arrow.slick-prev {
+    left: 603px;
   }
 }
 
@@ -256,4 +292,23 @@
     right: -33px;
     background-image: url("../img/icon-right-mobile.svg");
   }
+
+  // *******************стили для слайдера*******************/
+  .coaches__wrapper .slick-arrow.slick-next {
+    right: 246px;
+    width: 10px;
+    height: 21px;
+    margin-top: -10px;
+  }
+
+  .coaches__wrapper .slick-arrow.slick-prev {
+    left: 246px;
+    width: 10px;
+    height: 21px;
+    margin-top: -10px;
+  }
+}
+
+.no-js {
+  display: block;
 }

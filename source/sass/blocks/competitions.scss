@@ -144,6 +144,10 @@
     background: linear-gradient(111.72deg, #b80027 17.6%, #003eb7 95.31%);
     border: none;
   }
+
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 1199px) {

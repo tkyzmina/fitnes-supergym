@@ -36,7 +36,7 @@
   padding: 62px;
   padding-bottom: 57px;
   background: #1c3374;
-  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
+  // box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
 }
 
 .review__image {
@@ -190,4 +190,8 @@
   .slick-slide {
     width: 226px;
   }
+}
+
+.no-js {
+  display: flex;
 }
