@@ -22,6 +22,7 @@ gulp.task("css", function () {
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
+    .pipe(gulp.dest("build/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
@@ -91,13 +92,13 @@ gulp.task("html", function () {
 
 gulp.task("copy", function () {
   return gulp.src([
-      "source/fonts/**/*.{woff,woff2}",
-      "source/img/**",
-      "source/js/**",
-      "source//*.ico"
-    ], {
-      base: "source"
-    })
+    "source/fonts/**/*.{woff,woff2}",
+    "source/img/**",
+    "source/js/**",
+    "source//*.ico"
+  ], {
+    base: "source"
+  })
     .pipe(gulp.dest("build"));
 });
 
@@ -110,8 +111,8 @@ gulp.task("cleanpages", function () {
 
 gulp.task("pages", function () {
   return gulp.src(["build/**/**"], {
-      base: "build"
-    })
+    base: "build"
+  })
     .pipe(gulp.dest("docs"));
 });
 
