@@ -1862,6 +1862,12 @@ img {
     min-width: 100%;
     margin-bottom: 20px; }
   .features__sub-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 auto; }
   .features__span {
     bottom: -2px;
