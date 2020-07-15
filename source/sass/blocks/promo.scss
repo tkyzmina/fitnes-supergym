@@ -66,7 +66,7 @@
 .promo__form button {
   width: 414px;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 29px;
   margin-left: -2px;
   padding: 15px 20px 10px;
   font-style: normal;
@@ -80,6 +80,7 @@
   background-color: transparent;
   border: 3px solid $white-text;
   border-radius: 0;
+  cursor: pointer;
 
   &:hover {
     padding: 18px 20px 13px;

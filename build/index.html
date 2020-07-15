@@ -19,7 +19,10 @@
     <div class="header__wrapper">
       <div class="header__top">
         <a class="header__logo">
-          <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20">
+          <!-- <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20"> -->
+          <svg width="89" height="20" viewBox="0 0 89 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+          </svg>
         </a>
         <a class="header__tel" href="tel:+88005555555">8-800-555-55-55</a>
       </div>
@@ -553,7 +556,7 @@
             <label class="form__label">
               <input type="text" name="user-name" required="" title="Только буквы" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Имя">
             </label>
-            <label class="form__label">
+            <label class="form__label" for="#tel">
               <input type="tel" name="user-tel" required="" placeholder="Телефон" id="tel">
             </label>
           </div>
@@ -582,7 +585,10 @@
   <footer class="footer">
     <div class="footer__wrapper">
       <a class="footer__logo" href="#">
-        <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20">
+        <!-- <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20"> -->
+        <svg width="89" height="20" viewBox="0 0 89 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+        </svg>
       </a>
       <nav class="footer__nav">
         <ul class="footer__list">
@@ -605,23 +611,34 @@
       <ul class="footer__socials socials">
         <li class="socials__item">
           <a class="socials__link socials__link--vk" href="https://vk.com" aria-label="Vkontakte">
-            <img src="img/icon-vk.svg" alt="Vkontakte" width="24" height="13">
+            <!-- <img src="img/icon-vk.svg" alt="Vkontakte" width="24" height="13"> -->
+            <svg class="socials__icon socials__icon--vk" width="24" height="13" viewBox="0 0 24 13" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+            </svg>
           </a>
         </li>
         <li class="socials__item">
           <a class="socials__link socials__link--insta" href="https://instagram.com" aria-label="Instagram">
-            <img src="img/icon-insta.svg" alt="Instagram" width="24" height="24">
+            <!-- <img src="img/icon-insta.svg" alt="Instagram" width="24" height="24"> -->
+            <svg class="socials__icon socials__icon--insta" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite_auto.svg#icon-insta"></use>
+            </svg>
           </a>
         </li>
         <li class="socials__item">
           <a class="socials__link socials__link--fb" href="https://facebook.com" aria-label="Facebook">
-            <img src="img/icon-fb.svg" alt="Facebook" width="12" height="24">
+            <!-- <img src="img/icon-fb.svg" alt="Facebook" width="12" height="24"> -->
+            <svg class="socials__icon socials__icon--fb" width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+            </svg>
           </a>
         </li>
       </ul>
     </div>
   </footer>
   <script src="js/vendor/a.js"></script>
+  <script src="js/vendor/svg4everybody.js"></script>
+  <script src="js/vendor/svgxuse.js"></script>
   <script src="js/custom/script.js"></script>
 </body>
 

@@ -25,7 +25,7 @@
 .footer__list {
   display: flex;
   margin-left: 61px;
-  margin-top: -4px;
+  margin-top: 0;
 }
 
 .footer__link {
@@ -51,9 +51,34 @@
 .footer__socials {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   min-width: 110px;
+  padding-top: 3px;
 }
+
+.socials__item {
+  margin-right: 25px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.footer__logo svg {
+  fill: $white-text;
+}
+
+.socials__icon {
+  fill: $white-text;
+
+  &:hover {
+    fill: $darken-text;
+  }
+
+  &:active {
+    fill: $white-text;
+  }
+}
+
 
 .socials__item img {
   &:hover {
@@ -90,6 +115,11 @@
     margin-top: 0;
     min-width: 100px;
   }
+
+  .footer__logo svg {
+    width: 82px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -104,7 +134,7 @@
     left: 15px;
   }
 
-  .footer__logo img {
+  .footer__logo svg {
     width: 68px;
     height: 15px;
   }
@@ -140,17 +170,25 @@
     width: 143px;
   }
 
-  .socials__link--vk img {
+  .socials__item {
+    margin-right: 35px;
+
+    &:last-of-type {
+      margin-right: 35px;
+    }
+  }
+
+  .socials__icon--vk {
     width: 32px;
     height: 17px;
   }
 
-  .socials__link--insta img {
+  .socials__icon--insta {
     width: 27px;
     height: 27px;
   }
 
-  .socials__link--fb img {
+  .socials__icon--fb {
     width: 14px;
     height: 27px;
   }

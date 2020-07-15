@@ -1,5 +1,4 @@
 .tickets {
-  position: relative;
   background-color: #f8f9fc;
   overflow: hidden;
   z-index: 1;
@@ -7,14 +6,13 @@
 
 .tickets__wrapper {
   max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 120px;
-  padding: 118px 20px 100px;
+  margin: 0 auto 56px;
+  padding: 118px 20px 44px;
 
   &::after {
     content: "";
     position: absolute;
-    top: 58.2%;
+    top: 32.63%;
     right: 0;
     width: 287px;
     height: 494px;
@@ -69,6 +67,8 @@
   color: rgba(16, 38, 84, 0.5);
   background: none;
   border: none;
+  cursor: pointer;
+  outline: 0;
 
   &:hover,
   &:focus {
@@ -113,7 +113,7 @@
   box-sizing: border-box;
   width: calc(100% / 3 - 27px);
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-bottom: 20px;
   padding-top: 55px;
   padding-bottom: 60px;
@@ -182,7 +182,7 @@
 
 .tickets__price {
   position: absolute;
-  top: 42%;
+  top: 42.5%;
   left: 27%;
   display: flex;
   justify-content: space-around;
@@ -319,6 +319,7 @@
   .tickets__choose {
     width: 100%;
     min-width: 289px;
+    max-width: 332px;
     margin-bottom: 48px;
 
     &::after {

@@ -157,6 +157,7 @@
   background: transparent;
   border: none;
   z-index: 10;
+  cursor: pointer;
 }
 
 .coaches__wrapper .slick-arrow.slick-next {
@@ -165,6 +166,14 @@
 
 .coaches__wrapper .slick-arrow.slick-prev {
   left: 1220px;
+}
+
+.coaches__wrapper .slick-arrow:hover {
+  opacity: 0.4;
+}
+
+.coaches__wrapper .slick-arrow:active {
+  opacity: 1;
 }
 
 @media (max-width: 1350px) {

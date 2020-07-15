@@ -78,10 +78,19 @@
 
 .slick-slide {
   width: 560px;
+  height: auto;
 }
 
 .slick-track {
   display: flex;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slick-slide div {
+  height: 100%;
 }
 
 .review__wrapper .slick-arrow {
@@ -94,6 +103,7 @@
   border: none;
   background: transparent;
   z-index: 10;
+  cursor: pointer;
 }
 
 .review__wrapper .slick-arrow:hover {

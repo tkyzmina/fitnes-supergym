@@ -18,6 +18,10 @@
   align-items: baseline;
 }
 
+.header__logo svg {
+  fill: $white-text;
+}
+
 .header__tel {
   font-style: normal;
   font-size: 26px;
@@ -198,7 +202,7 @@
     padding: 37px 45px 82px;
   }
 
-  .header__logo img {
+  .header__logo svg {
     width: 82px;
     height: 17px;
   }
@@ -210,6 +214,10 @@
 
   .header__socials {
     display: none;
+  }
+
+  .header__features {
+    margin-right: 17px;
   }
 
   .header__main {
@@ -252,6 +260,7 @@
   }
 
   .header__sub-wrapper {
+    justify-content: flex-end;
     margin-bottom: 40px;
   }
 
@@ -273,7 +282,7 @@
     padding: 18px 15px 77px;
   }
 
-  .header__logo img {
+  .header__logo svg {
     width: 68px;
     height: 15px;
   }
@@ -281,6 +290,10 @@
   .header__tel {
     font-size: 20px;
     line-height: 20px;
+  }
+
+  .header__features {
+    margin-right: 0;
   }
 
   .header__city {
