@@ -672,7 +672,8 @@ img {
           justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 20px 236px; }
+  margin-bottom: 206px;
+  padding: 120px 20px 30px; }
 
 .equipment__wrapper {
   width: calc(100% / 2.63);
@@ -685,8 +686,9 @@ img {
   width: calc(100% / 1.65);
   min-width: 568px;
   height: 401px;
-  background: no-repeat url("../img/equipment-desktop.jpg");
+  background-image: url("../img/equipment-desktop.jpg");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover; }
 
 .equipment__video {
@@ -759,7 +761,8 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 98px 45px 183px; }
+    margin-bottom: 92px;
+    padding: 98px 45px 90px; }
   .equipment__wrapper {
     width: 100%;
     margin-right: 0;
@@ -783,17 +786,20 @@ img {
   .equipment__image {
     width: 100%;
     height: 345px;
-    background: no-repeat url("../img/equipment-tablet.jpg");
+    background-image: url("../img/equipment-tablet.jpg");
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover; }
   .equipment__video {
     content: "";
     position: absolute;
     top: 76%;
-    left: 30.4%;
+    left: 50%;
     width: 266px;
     height: 167px;
-    background-image: url("../img/video-preview-tablet.png"); }
+    background-image: url("../img/video-preview-tablet.png");
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
     .equipment__video::before {
       width: 266px;
       height: 167px; }
@@ -808,10 +814,13 @@ img {
 
 @media (max-width: 767px) {
   .equipment {
+    margin-bottom: 207px;
     padding: 69px 0 30px; }
   .equipment__wrapper {
+    width: 71%;
+    margin: 0 auto;
     margin-bottom: 22px;
-    padding-left: 15px; }
+    text-align: left; }
   .equipment__header {
     margin-bottom: 6px;
     font-size: 32px;
@@ -825,26 +834,35 @@ img {
     padding-right: 42px;
     text-align: left; }
   .equipment__image {
+    width: 71%;
     min-width: 320px;
     height: 313px;
+    margin: 0 auto;
     margin-bottom: 40px;
-    background: no-repeat url("../img/equipment-mobile.jpg");
+    background-image: url("../img/equipment-mobile.jpg");
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover; }
   .equipment__video {
     position: relative;
-    top: 0;
-    left: 0;
+    top: 353px;
+    left: 0%;
     width: 100%;
     min-width: 320px;
     height: 167px;
     background-image: url("../img/video-preview-mobile.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; }
+    background-size: cover;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); }
     .equipment__video::before {
       width: 100%;
       height: 167px; } }
+
+@media (max-width: 320px) {
+  .equipment__wrapper {
+    width: 91%; } }
 
 .tickets {
   background-color: #f8f9fc;
