@@ -1912,7 +1912,7 @@ img {
 .sale__block {
   margin-bottom: 40px;
   padding: 22px 28px 27px;
-  border: 7px solid transparent;
+  border: 7px solid;
   -o-border-image: linear-gradient(#d10a42, #00359f);
      border-image: -webkit-gradient(linear, left top, left bottom, from(#d10a42), to(#00359f));
      border-image: linear-gradient(#d10a42, #00359f);
@@ -2289,22 +2289,29 @@ img {
   .review__item {
     position: relative;
     width: 226px;
-    padding: 56px 28px 10px; }
+    padding: 56px 19px 16px; }
   .review__image {
     position: absolute;
     top: 40px;
     left: 41px; }
   .review__name {
     margin-bottom: 23px;
-    padding-left: 96px;
+    padding-left: 106px;
     font-size: 20px;
     line-height: 26px; }
   .review__text {
+    text-align: -moz-center;
     text-align: center; }
   .slick-arrow.slick-prev {
-    left: 259px; }
+    left: 266px;
+    width: 10px;
+    height: 21px; }
+  .review__wrapper .slick-arrow {
+    top: 54%; }
   .slick-arrow.slick-next {
-    right: 259px; }
+    right: 266px;
+    width: 10px;
+    height: 21px; }
   .slick-slide {
     width: 226px; } }
 

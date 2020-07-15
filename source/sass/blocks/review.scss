@@ -166,7 +166,7 @@
   .review__item {
     position: relative;
     width: 226px;
-    padding: 56px 28px 10px;
+    padding: 56px 19px 16px;
   }
 
   .review__image {
@@ -177,21 +177,30 @@
 
   .review__name {
     margin-bottom: 23px;
-    padding-left: 96px;
+    padding-left: 106px;
     font-size: 20px;
     line-height: 26px;
   }
 
   .review__text {
+    text-align: -moz-center;
     text-align: center;
   }
 
   .slick-arrow.slick-prev {
-    left: 259px;
+    left: 266px;
+    width: 10px;
+    height: 21px;
+  }
+
+  .review__wrapper .slick-arrow {
+    top: 54%
   }
 
   .slick-arrow.slick-next {
-    right: 259px;
+    right: 266px;
+    width: 10px;
+    height: 21px;
   }
 
   .slick-slide {
