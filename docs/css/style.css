@@ -1867,6 +1867,8 @@ img {
     padding-left: 24px;
     text-align: center; }
   .features h3 {
+    text-align: center; }
+  .features__number {
     text-align: center; } }
 
 .sale {
@@ -1914,6 +1916,7 @@ img {
   -o-border-image: linear-gradient(#d10a42, #00359f);
      border-image: -webkit-gradient(linear, left top, left bottom, from(#d10a42), to(#00359f));
      border-image: linear-gradient(#d10a42, #00359f);
+  -webkit-border-image-slice: 1;
   border-image-slice: 1; }
   .sale__block:last-of-type {
     margin-bottom: 0; }

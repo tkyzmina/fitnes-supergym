@@ -41,7 +41,10 @@
   margin-bottom: 40px;
   padding: 22px 28px 27px;
   border: 7px solid transparent;
+  -moz-border-image: -moz-linear-gradient(#d10a42, #00359f);
+  -webkit-border-image: -webkit-linear-gradient(#d10a42, #00359f);
   border-image: linear-gradient(#d10a42, #00359f);
+  -webkit-border-image-slice: 1;
   border-image-slice: 1;
 
   &:last-of-type {
