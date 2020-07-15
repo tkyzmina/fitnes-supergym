@@ -50,6 +50,7 @@
   background: url("../img/icon-play.svg");
   border: none;
   cursor: pointer;
+  outline: none;
 
   &:hover,
   &:focus {
@@ -151,7 +152,7 @@
     }
   }
 
-  .equipment__video a {
+  .equipment__button {
     top: 28%;
     left: 50%;
     margin-right: -50%;

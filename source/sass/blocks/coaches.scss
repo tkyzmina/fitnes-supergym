@@ -223,12 +223,12 @@
   }
 
   .coaches__name {
-    top: 81%;
+    top: 83.6%;
   }
 
   // *******************стили для слайдера*******************/
   .coaches__wrapper .slick-arrow.slick-next {
-    right: 630px;
+    right: 607px;
   }
 
   .coaches__wrapper .slick-arrow.slick-prev {
@@ -239,6 +239,7 @@
 @media (max-width: 767px) {
   .coaches {
     max-width: 320px;
+    margin-bottom: 21px;
     padding: 30px 45px 50px 45px;
   }
 

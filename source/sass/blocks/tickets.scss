@@ -244,14 +244,15 @@
 
 @media (max-width: 1199px) {
   .tickets__wrapper {
-    margin-bottom: 61px;
+    margin-bottom: 18px;
     padding-top: 99px;
+    padding-bottom: 41px;
 
     &::after {
-      bottom: 36px;
-      right: 58px;
-      width: 289px;
-      height: 345px;
+      top: 40.38%;
+      right: 3px;
+      width: 342px;
+      height: 372px;
       background: url("../img/bumper-tablet.png");
     }
   }
@@ -265,19 +266,24 @@
     width: 61%;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 39px;
+    padding-top: 57px;
 
     &:nth-of-type(3n) {
+      margin-left: 20px;
       margin-right: 20px;
     }
 
-    &:nth-of-type(4n) {
+    &:nth-of-type(n) {
       margin-left: 20px;
+      margin-right: 20px;
     }
 
     &:first-of-type {
       margin-left: 20px;
+      margin-right: 20px;
     }
+
   }
 
   .tickets__title {
@@ -330,8 +336,8 @@
 
   .tickets__wrapper {
     min-width: 320px;
-    margin-bottom: 70px;
-    padding: 69px 15px 35px;
+    margin-bottom: 10px;
+    padding: 69px 15px 25px;
 
     &::after {
       display: none;
@@ -363,16 +369,9 @@
     padding-top: 44px;
     padding-bottom: 47px;
 
-    &:nth-of-type(3n) {
+    &:nth-of-type(n) {
+      margin-left: 0;
       margin-right: 0;
-    }
-
-    &:nth-of-type(4n) {
-      margin-left: 0;
-    }
-
-    &:first-of-type {
-      margin-left: 0;
     }
   }
 
@@ -393,6 +392,7 @@
 
   .tickets__price {
     top: 41%;
+    left: 52%;
   }
 }
 

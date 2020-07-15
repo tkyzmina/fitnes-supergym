@@ -91,6 +91,10 @@
 }
 
 @media (max-width: 1199px) {
+  .footer {
+    padding-top: 46px;
+  }
+
   .footer__wrapper {
     min-width: 768px;
     padding-left: 45px;
@@ -112,8 +116,13 @@
   }
 
   .footer__socials {
-    margin-top: 0;
     min-width: 100px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .socials__item {
+    margin-right: 20px;
   }
 
   .footer__logo svg {

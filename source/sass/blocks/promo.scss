@@ -182,6 +182,7 @@
   }
 
   .promo__form {
+    padding-top: 69px;
     background: #102654;
   }
 
@@ -211,6 +212,7 @@
 
   .promo__form button {
     width: 100%;
+    margin-top: 28px;
   }
 
   .promo__contacts {
@@ -231,7 +233,7 @@
     margin-right: 0;
 
     &::after {
-      right: -7%;
+      right: -6.7%;
       height: 129px;
     }
   }
@@ -266,11 +268,12 @@
 
   .form__wrapper {
     flex-direction: column;
+    margin-bottom: 3px;
   }
 
   .form__label {
     width: 100%;
-    margin-bottom: 37px;
+    margin-bottom: 34px;
   }
 
   .promo__wrapper {
@@ -278,7 +281,7 @@
   }
 
   .promo__contacts {
-    padding: 68px 15px 40px;
+    padding: 68px 15px 41px;
   }
 
   .promo__left,
