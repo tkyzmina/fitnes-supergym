@@ -13,6 +13,7 @@
       autoplaySpeed: 3500,
       pauseOnFosus: true,
       pauseOnHover: true,
+      centerMode: true,
       draggable: true,
       swipe: true,
       waitForAnimate: false,
@@ -34,20 +35,20 @@
       waitForAnimate: false,
       variableWidth: true,
       responsive: [{
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
         }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
       ]
     });
   });
