@@ -57,6 +57,10 @@
   background-color: transparent;
   border-radius: 0;
   border-bottom: 1px solid #74819c;
+
+  &:hover {
+    border-bottom: 1px solid $white-text;
+  }
 }
 
 .promo__form button {
@@ -199,9 +203,9 @@
   }
 
   .form__wrapper {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   .promo__form button {
@@ -209,8 +213,8 @@
   }
 
   .promo__contacts {
-    padding: 68px 133px 41px 133px;
     justify-content: space-between;
+    padding: 68px 133px 41px 133px;
   }
 
   .promo__left,

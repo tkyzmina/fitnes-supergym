@@ -54,16 +54,16 @@
 .coaches__name {
   position: absolute;
   top: 84%;
-  margin-bottom: -3%;
   left: 50%;
+  margin-bottom: -3%;
   margin-right: -50%;
-  transform: translate(-50%, -84%);
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 17px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   color: $white-text;
+  transform: translate(-50%, -84%);
 }
 
 .coaches__popup {
@@ -131,21 +131,8 @@
     left: -15px;
     width: 6px;
     height: 6px;
-    border-radius: 50%;
     background: $white-text;
-  }
-}
-
-.coaches__button {
-  position: absolute;
-  width: 19px;
-  height: 32px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.6;
+    border-radius: 50%;
   }
 }
 
@@ -163,13 +150,13 @@
 .coaches__wrapper .slick-arrow {
   position: absolute;
   top: 50%;
-  margin-top: -17px;
-  z-index: 10;
-  font-size: 0;
-  border: none;
-  background: transparent;
   width: 18px;
   height: 32px;
+  margin-top: -17px;
+  font-size: 0;
+  background: transparent;
+  border: none;
+  z-index: 10;
 }
 
 .coaches__wrapper .slick-arrow.slick-next {
@@ -230,14 +217,6 @@
     top: 81%;
   }
 
-  .coaches__button--left {
-    left: -59px;
-  }
-
-  .coaches__button--right {
-    right: -55px;
-  }
-
   // *******************стили для слайдера*******************/
   .coaches__wrapper .slick-arrow.slick-next {
     right: 630px;
@@ -251,10 +230,7 @@
 @media (max-width: 767px) {
   .coaches {
     max-width: 320px;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding: 30px 45px 50px 45px;
   }
 
   .coaches__wrapper {
@@ -274,23 +250,6 @@
 
   .coaches__popup {
     padding: 48px 9px 58px;
-  }
-
-  .coaches__button {
-    width: 10px;
-    height: 19px;
-  }
-
-  .coaches__button--left {
-    top: 129px;
-    left: -33px;
-    background-image: url("../img/icon-left-mobile.svg");
-  }
-
-  .coaches__button--right {
-    top: 129px;
-    right: -33px;
-    background-image: url("../img/icon-right-mobile.svg");
   }
 
   // *******************стили для слайдера*******************/

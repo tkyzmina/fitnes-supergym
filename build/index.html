@@ -6,15 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SuperGym</title>
+  <link rel="preload" href="fonts/bebasneue-bold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/bebasneue-regular.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/robotocondensed-bold.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/robotocondensed-regular.woff2" as="font" crossorigin="">
+  <link rel="preload" href="fonts/robotocondensed-light.woff2" as="font" crossorigin="">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-  <header class="header header--ie11">
+  <header class="header header--outdated">
     <div class="header__wrapper">
       <div class="header__top">
         <a class="header__logo">
-          <img src="img/icon-logo.svg" alt="логотип SuperFitnes" width="89" height="20">
+          <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20">
         </a>
         <a class="header__tel" href="tel:+88005555555">8-800-555-55-55</a>
       </div>
@@ -32,9 +37,7 @@
             </dl>
             <p class="header__title">центр</p>
           </div>
-
           <a class="header__button button" href="#tickets">Купить абонемент</a>
-
         </div>
         <div class="header__image">
           <picture>
@@ -94,7 +97,7 @@
           <img src="img/equipment-desktop.jpg" srcset="img/equipment-desktop@2x.jpg 2x" alt="Изображение тренажерного зала" width="660" height="401">
         </picture>
         <div class="equipment__video">
-          <a href="#" aria-label="Воспроизвести видео"></a>
+          <button class="equipment__button" type="button" aria-label="Воспроизвести видео"></button>
         </div>
       </div>
     </section>
@@ -168,7 +171,6 @@
             </div>
             <a class="tickets__buy button" href="#">купить абонемент</a>
           </li>
-
           <!-- 12 месяцев -->
           <li class="tickets__item tickets__item--year tickets__item--hide">
             <h3>С тренером</h3>
@@ -215,7 +217,7 @@
           </div>
         </div>
         <h2 class="competitions__title">Ежегодные соревнования по CrossFit</h2>
-        <a href="#" class="competitions__button">заполнить заявку</a>
+        <a href="blank.html" class="competitions__button">заполнить заявку</a>
       </div>
       <div class="competitions__image"></div>
     </section>
@@ -307,9 +309,7 @@
             </div>
           </li>
 
-
-
-
+          <!-- втрой блок с тренерами для слайдера -->
           <li class="coaches__item no-js" tabindex="0">
             <div class="coaches__image">
               <h3 class="coaches__name">Анна Павлова 2</h3>
@@ -330,7 +330,6 @@
               </ul>
             </div>
           </li>
-
           <li class="coaches__item no-js" tabindex="0">
             <div class="coaches__image">
               <h3 class="coaches__name">Алексей Лавров 2</h3>
@@ -351,7 +350,6 @@
               </ul>
             </div>
           </li>
-
           <li class="coaches__item no-js" tabindex="0">
             <div class="coaches__image">
               <h3 class="coaches__name">Александр Пашков 2</h3>
@@ -372,7 +370,6 @@
               </ul>
             </div>
           </li>
-
           <li class="coaches__item no-js" tabindex="0">
             <div class="coaches__image">
               <h3 class="coaches__name">Мария Кетова 2</h3>
@@ -405,10 +402,9 @@
               <p class="features__number">900</p>
               <span class="features__span">кв/м</span>
             </div>
-
             <div class="features__text">
               <h3>Площадь</h3>
-              <p>Занимайтесь без очередей и толпучки</p>
+              <p>Занимайтесь без очередей и толкучки</p>
             </div>
           </div>
           <div class="features__item">
@@ -453,7 +449,6 @@
           </div>
         </div>
       </div>
-
     </section>
     <section class="sale" id="sale">
       <h2 class="sale__title">Акции</h2>
@@ -488,7 +483,6 @@
     <section class="review">
       <h2 class="review__title">Отзывы</h2>
       <div class="review__wrapper">
-
         <div class="review__item">
           <div class="review__image">
             <picture>
@@ -509,7 +503,6 @@
               обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
           </div>
         </div>
-
         <div class="review__item no-js">
           <div class="review__image">
             <picture>
@@ -530,7 +523,6 @@
               обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
           </div>
         </div>
-
         <div class="review__item no-js">
           <div class="review__image">
             <picture>
@@ -556,18 +548,16 @@
     <section class="promo">
       <div class="promo__block">
         <form class="promo__form form" method="POST" action="https://echo.htmlacademy.ru" name="contacts-form">
-
           <h2>БЕСПЛАТНОЕ занятие</h2>
           <div class="form__wrapper">
             <label class="form__label">
               <input type="text" name="user-name" required="" title="Только буквы" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Имя">
             </label>
             <label class="form__label">
-              <input type="tel" name="user-tel" required="" pattern="[0-9]{11}" title="74991234567  - 11 цифр" placeholder="Телефон">
+              <input type="tel" name="user-tel" required="" placeholder="Телефон" id="tel">
             </label>
           </div>
           <button class="form__button" type="submit">отправить</button>
-
         </form>
         <div class="promo__contacts">
           <h2 class="promo__title">Контакты</h2>
@@ -592,7 +582,7 @@
   <footer class="footer">
     <div class="footer__wrapper">
       <a class="footer__logo" href="#">
-        <img src="img/icon-logo.svg" alt="логотип SuperFitnes" width="89" height="20">
+        <img src="img/icon-logo.svg" alt="логотип SuperGym" width="89" height="20">
       </a>
       <nav class="footer__nav">
         <ul class="footer__list">
@@ -614,29 +604,24 @@
       </nav>
       <ul class="footer__socials socials">
         <li class="socials__item">
-          <a class="socials__link socials__link--vk" href="https://vk.com">
-            <img src="img/icon-vk.svg" alt="cсылка на сраницу в Vkontakte" width="24" height="13">
-          </a>
-        </li>
-
-        <li class="socials__item">
-          <a class="socials__link socials__link--insta" href="https://instagram.com">
-            <img src="img/icon-insta.svg" alt="cсылка на сраницу в Instagram" width="24" height="24">
+          <a class="socials__link socials__link--vk" href="https://vk.com" aria-label="Vkontakte">
+            <img src="img/icon-vk.svg" alt="Vkontakte" width="24" height="13">
           </a>
         </li>
         <li class="socials__item">
-          <a class="socials__link socials__link--fb" href="https://facebook.com">
-            <img src="img/icon-fb.svg" alt="cсылка на сраницу в Facebook" width="12" height="24">
+          <a class="socials__link socials__link--insta" href="https://instagram.com" aria-label="Instagram">
+            <img src="img/icon-insta.svg" alt="Instagram" width="24" height="24">
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link socials__link--fb" href="https://facebook.com" aria-label="Facebook">
+            <img src="img/icon-fb.svg" alt="Facebook" width="12" height="24">
           </a>
         </li>
       </ul>
     </div>
-
-
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="js/vendor/slick.js"></script>
+  <script src="js/vendor/a.js"></script>
   <script src="js/custom/script.js"></script>
 </body>
 
