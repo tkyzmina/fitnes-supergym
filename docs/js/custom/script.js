@@ -13,11 +13,11 @@
       autoplaySpeed: 3500,
       pauseOnFosus: true,
       pauseOnHover: true,
-      centerMode: true,
+      centerMode: false,
       draggable: true,
       swipe: true,
       waitForAnimate: false,
-      variableWidth: true,
+      variableWidth: false,
     });
     // eslint-disable-next-line
     $('.coaches__list').slick({

@@ -4,6 +4,6 @@
     "declaration-no-important": true,
     "indentation": [2, {"ignore": ["inside-parens"]}],
     "value-no-vendor-prefix":[null, { "ignoreValues": ["linear-gradient"] }],
-    "property-no-vendor-prefix":[true, { "ignoreProperties": ["background-clip"] }],
+    "property-no-vendor-prefix":[null, { "ignoreProperties": ["background-clip"] }],
   }
 }

@@ -85,10 +85,6 @@
   display: flex;
 }
 
-.slick-slide {
-  height: auto;
-}
-
 .review__wrapper .slick-arrow {
   position: absolute;
   top: 50%;
@@ -143,7 +139,7 @@
   }
 
   .review__wrapper .slick-arrow {
-    top: 53%;
+    top: 51%;
   }
 
   .review__wrapper .slick-arrow.slick-prev {
@@ -196,7 +192,6 @@
   }
 
   .review__text {
-    text-align: -moz-center;
     text-align: center;
   }
 
@@ -207,7 +202,7 @@
   }
 
   .review__wrapper .slick-arrow {
-    top: 54%
+    top: 54%;
   }
 
   .review__wrapper .slick-arrow.slick-next {

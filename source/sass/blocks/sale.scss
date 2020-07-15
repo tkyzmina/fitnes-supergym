@@ -43,8 +43,8 @@
   border: 7px solid;
   -moz-border-image: -moz-linear-gradient(#d10a42, #00359f);
   -webkit-border-image: -webkit-linear-gradient(#d10a42, #00359f);
-  border-image: linear-gradient(#d10a42, #00359f);
   -webkit-border-image-slice: 1;
+  border-image: linear-gradient(#d10a42, #00359f);
   border-image-slice: 1;
 
   &:last-of-type {

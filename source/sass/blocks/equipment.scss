@@ -4,7 +4,8 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 20px 236px;
+  margin-bottom: 206px;
+  padding: 120px 20px 30px;
 }
 
 .equipment__wrapper {
@@ -18,6 +19,11 @@
   position: relative;
   width: calc(100% / 1.65);
   min-width: 568px;
+  height: 401px;
+  background-image: url("../img/equipment-desktop.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .equipment__video {
@@ -99,7 +105,8 @@
 @media (max-width: 1199px) {
   .equipment {
     flex-direction: column;
-    padding: 98px 45px 183px;
+    margin-bottom: 92px;
+    padding: 98px 45px 90px;
   }
 
   .equipment__wrapper {
@@ -132,19 +139,24 @@
     display: none;
   }
 
-  .equipment__image,
-  .equipment__image img {
+  .equipment__image {
     width: 100%;
+    height: 345px;
+    background-image: url("../img/equipment-tablet.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .equipment__video {
     content: "";
     position: absolute;
     top: 76%;
-    left: 30.4%;
+    left: 50%;
     width: 266px;
     height: 167px;
     background-image: url("../img/video-preview-tablet.png");
+    transform: translate(-50%, 0);
 
     &::before {
       width: 266px;
@@ -164,12 +176,15 @@
 
 @media (max-width: 767px) {
   .equipment {
+    margin-bottom: 207px;
     padding: 69px 0 30px;
   }
 
   .equipment__wrapper {
+    width: 71%;
+    margin: 0 auto;
     margin-bottom: 22px;
-    padding-left: 15px;
+    text-align: left;
   }
 
   .equipment__header {
@@ -191,18 +206,21 @@
   }
 
   .equipment__image {
+    width: 71%;
     min-width: 320px;
+    height: 313px;
+    margin: 0 auto;
     margin-bottom: 40px;
-  }
-
-  .equipment__image img {
-    margin-bottom: 40px;
+    background-image: url("../img/equipment-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .equipment__video {
     position: relative;
-    top: 0;
-    left: 0;
+    top: 353px;
+    left: 0%;
     width: 100%;
     min-width: 320px;
     height: 167px;
@@ -210,10 +228,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transform: translate(0, 0);
 
     &::before {
       width: 100%;
       height: 167px;
     }
+  }
+}
+
+@media (max-width: 320px) {
+  .equipment__wrapper {
+    width: 91%;
   }
 }

@@ -42,7 +42,7 @@
     "*.json",
     "*.js",
     "source/*.html",
-    "source/js/custom/*.js",
+    "source/js/custom/script.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],
