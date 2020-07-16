@@ -33,7 +33,7 @@
   left: -10%;
   width: 364px;
   height: 228px;
-  background-image: url("../img/video-preview.png");
+  background-image: url("../img/video-preview.jpg");
 
   &::before {
     content: "";
@@ -155,7 +155,7 @@
     left: 50%;
     width: 266px;
     height: 167px;
-    background-image: url("../img/video-preview-tablet.png");
+    background-image: url("../img/video-preview-tablet.jpg");
     transform: translate(-50%, 0);
 
     &::before {
@@ -224,7 +224,7 @@
     width: 100%;
     min-width: 320px;
     height: 167px;
-    background-image: url("../img/video-preview-mobile.png");
+    background-image: url("../img/video-preview-mobile.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

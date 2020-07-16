@@ -33,7 +33,7 @@
 }
 
 .sale__image {
-  background-image: url("../img/sale-desktop.png");
+  background-image: url("../img/sale-desktop.jpg");
   background-repeat: no-repeat;
 }
 
@@ -238,7 +238,7 @@
 
   .sale__image {
     width: calc(100% / 1.7);
-    background-image: url("../img/sale-tablet.png");
+    background-image: url("../img/sale-tablet.jpg");
   }
 }
 
@@ -311,7 +311,7 @@
 
   .sale__image {
     height: 299px;
-    background-image: url("../img/sale-mobile.png");
+    background-image: url("../img/sale-mobile.jpg");
     background-size: cover;
   }
 }

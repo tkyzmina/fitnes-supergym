@@ -19,7 +19,7 @@
     right: 0;
     width: 100%;
     height: 500px;
-    background: no-repeat url("../img/competitions-desktop.png");
+    background: no-repeat url("../img/competitions-desktop.jpg");
     background-size: cover;
     background-color: #000145;
   }
@@ -175,7 +175,7 @@
       right: 0;
       width: 100%;
       height: 292px;
-      background: no-repeat url("../img/competitions-tablet.png");
+      background: no-repeat url("../img/competitions-tablet.jpg");
     }
   }
 
@@ -268,7 +268,7 @@
     background-size: 100% auto;
     background-color: #000145;
     background-repeat: no-repeat;
-    background-image: url("../img/competitions-mobile.png");
+    background-image: url("../img/competitions-mobile.jpg");
 
     &::after {
       display: none;
