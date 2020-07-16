@@ -1,6 +1,504 @@
 /* eslint-disable */
 
 /*!
+ * @copyright Copyright (c) 2017 IcoMoon.io
+ * @license   Licensed under MIT license
+ *            See https://github.com/Keyamoon/svgxuse
+ * @version   1.2.6
+ */
+/*jslint browser: true */
+/*global XDomainRequest, MutationObserver, window */
+(function () {
+  "use strict";
+  if (typeof window !== "undefined" && window.addEventListener) {
+    var cache = Object.create(null); // holds xhr objects to prevent multiple requests
+    var checkUseElems;
+    var tid; // timeout id
+    var debouncedCheck = function () {
+      clearTimeout(tid);
+      tid = setTimeout(checkUseElems, 100);
+    };
+    var unobserveChanges = function () {
+      return;
+    };
+    var observeChanges = function () {
+      var observer;
+      window.addEventListener("resize", debouncedCheck, false);
+      window.addEventListener("orientationchange", debouncedCheck, false);
+      if (window.MutationObserver) {
+        observer = new MutationObserver(debouncedCheck);
+        observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true,
+          attributes: true
+        });
+        unobserveChanges = function () {
+          try {
+            observer.disconnect();
+            window.removeEventListener("resize", debouncedCheck, false);
+            window.removeEventListener("orientationchange", debouncedCheck, false);
+          } catch (ignore) { }
+        };
+      } else {
+        document.documentElement.addEventListener("DOMSubtreeModified", debouncedCheck, false);
+        unobserveChanges = function () {
+          document.documentElement.removeEventListener("DOMSubtreeModified", debouncedCheck, false);
+          window.removeEventListener("resize", debouncedCheck, false);
+          window.removeEventListener("orientationchange", debouncedCheck, false);
+        };
+      }
+    };
+    var createRequest = function (url) {
+      // In IE 9, cross origin requests can only be sent using XDomainRequest.
+      // XDomainRequest would fail if CORS headers are not set.
+      // Therefore, XDomainRequest should only be used with cross origin requests.
+      function getOrigin(loc) {
+        var a;
+        if (loc.protocol !== undefined) {
+          a = loc;
+        } else {
+          a = document.createElement("a");
+          a.href = loc;
+        }
+        return a.protocol.replace(/:/g, "") + a.host;
+      }
+      var Request;
+      var origin;
+      var origin2;
+      if (window.XMLHttpRequest) {
+        Request = new XMLHttpRequest();
+        origin = getOrigin(location);
+        origin2 = getOrigin(url);
+        if (Request.withCredentials === undefined && origin2 !== "" && origin2 !== origin) {
+          Request = XDomainRequest || undefined;
+        } else {
+          Request = XMLHttpRequest;
+        }
+      }
+      return Request;
+    };
+    var xlinkNS = "http://www.w3.org/1999/xlink";
+    checkUseElems = function () {
+      var base;
+      var bcr;
+      var fallback = ""; // optional fallback URL in case no base path to SVG file was given and no symbol definition was found.
+      var hash;
+      var href;
+      var i;
+      var inProgressCount = 0;
+      var isHidden;
+      var Request;
+      var url;
+      var uses;
+      var xhr;
+
+      function observeIfDone() {
+        // If done with making changes, start watching for chagnes in DOM again
+        inProgressCount -= 1;
+        if (inProgressCount === 0) { // if all xhrs were resolved
+          unobserveChanges(); // make sure to remove old handlers
+          observeChanges(); // watch for changes to DOM
+        }
+      }
+
+      function attrUpdateFunc(spec) {
+        return function () {
+          if (cache[spec.base] !== true) {
+            spec.useEl.setAttributeNS(xlinkNS, "xlink:href", "#" + spec.hash);
+            if (spec.useEl.hasAttribute("href")) {
+              spec.useEl.setAttribute("href", "#" + spec.hash);
+            }
+          }
+        };
+      }
+
+      function onloadFunc(xhr) {
+        return function () {
+          var body = document.body;
+          var x = document.createElement("x");
+          var svg;
+          xhr.onload = null;
+          x.innerHTML = xhr.responseText;
+          svg = x.getElementsByTagName("svg")[0];
+          if (svg) {
+            svg.setAttribute("aria-hidden", "true");
+            svg.style.position = "absolute";
+            svg.style.width = 0;
+            svg.style.height = 0;
+            svg.style.overflow = "hidden";
+            body.insertBefore(svg, body.firstChild);
+          }
+          observeIfDone();
+        };
+      }
+
+      function onErrorTimeout(xhr) {
+        return function () {
+          xhr.onerror = null;
+          xhr.ontimeout = null;
+          observeIfDone();
+        };
+      }
+      unobserveChanges(); // stop watching for changes to DOM
+      // find all use elements
+      uses = document.getElementsByTagName("use");
+      for (i = 0; i < uses.length; i += 1) {
+        try {
+          bcr = uses[i].getBoundingClientRect();
+        } catch (ignore) {
+          // failed to get bounding rectangle of the use element
+          bcr = false;
+        }
+        href = uses[i].getAttribute("href") ||
+          uses[i].getAttributeNS(xlinkNS, "href") ||
+          uses[i].getAttribute("xlink:href");
+        if (href && href.split) {
+          url = href.split("#");
+        } else {
+          url = ["", ""];
+        }
+        base = url[0];
+        hash = url[1];
+        isHidden = bcr && bcr.left === 0 && bcr.right === 0 && bcr.top === 0 && bcr.bottom === 0;
+        if (bcr && bcr.width === 0 && bcr.height === 0 && !isHidden) {
+          // the use element is empty
+          // if there is a reference to an external SVG, try to fetch it
+          // use the optional fallback URL if there is no reference to an external SVG
+          if (fallback && !base.length && hash && !document.getElementById(hash)) {
+            base = fallback;
+          }
+          if (uses[i].hasAttribute("href")) {
+            uses[i].setAttributeNS(xlinkNS, "xlink:href", href);
+          }
+          if (base.length) {
+            // schedule updating xlink:href
+            xhr = cache[base];
+            if (xhr !== true) {
+              // true signifies that prepending the SVG was not required
+              setTimeout(attrUpdateFunc({
+                useEl: uses[i],
+                base: base,
+                hash: hash
+              }), 0);
+            }
+            if (xhr === undefined) {
+              Request = createRequest(base);
+              if (Request !== undefined) {
+                xhr = new Request();
+                cache[base] = xhr;
+                xhr.onload = onloadFunc(xhr);
+                xhr.onerror = onErrorTimeout(xhr);
+                xhr.ontimeout = onErrorTimeout(xhr);
+                xhr.open("GET", base);
+                xhr.send();
+                inProgressCount += 1;
+              }
+            }
+          }
+        } else {
+          if (!isHidden) {
+            if (cache[base] === undefined) {
+              // remember this URL if the use element was not empty and no request was sent
+              cache[base] = true;
+            } else if (cache[base].onload) {
+              // if it turns out that prepending the SVG is not necessary,
+              // abort the in-progress xhr.
+              cache[base].abort();
+              delete cache[base].onload;
+              cache[base] = true;
+            }
+          } else if (base.length && cache[base]) {
+            setTimeout(attrUpdateFunc({
+              useEl: uses[i],
+              base: base,
+              hash: hash
+            }), 0);
+          }
+        }
+      }
+      uses = "";
+      inProgressCount += 1;
+      observeIfDone();
+    };
+    var winLoad;
+    winLoad = function () {
+      window.removeEventListener("load", winLoad, false); // to prevent memory leaks
+      tid = setTimeout(checkUseElems, 0);
+    };
+    if (document.readyState !== "complete") {
+      // The load event fires when all resources have finished loading, which allows detecting whether SVG use elements are empty.
+      window.addEventListener("load", winLoad, false);
+    } else {
+      // No need to add a listener if the document is already loaded, initialize immediately.
+      winLoad();
+    }
+  }
+}());
+
+
+/*! svg4everybody v2.1.9 | github.com/jonathantneal/svg4everybody */
+
+function embed(parent, svg, target, use) {
+  // if the target exists
+  if (target) {
+    // create a document fragment to hold the contents of the target
+    var fragment = document.createDocumentFragment();
+
+    // cache the closest matching viewBox
+    var viewBox = !svg.hasAttribute('viewBox') && target.getAttribute('viewBox');
+
+    // conditionally set the viewBox on the svg
+    if (viewBox) {
+      svg.setAttribute('viewBox', viewBox);
+    }
+
+    // clone the target
+    var clone = document.importNode ? document.importNode(target, true) : target.cloneNode(true);
+
+    var g = document.createElementNS(svg.namespaceURI || 'http://www.w3.org/2000/svg', 'g');
+
+    // copy the contents of the clone into the fragment
+    while (clone.childNodes.length) {
+      g.appendChild(clone.firstChild);
+    }
+
+    if (use) {
+      for (var i = 0; use.attributes.length > i; i++) {
+        var attr = use.attributes[i];
+        if (attr.name === 'xlink:href' || attr.name === 'href') {
+          continue;
+        }
+        g.setAttribute(attr.name, attr.value);
+      }
+    }
+
+    fragment.appendChild(g);
+
+    // append the fragment into the svg
+    parent.appendChild(fragment);
+  }
+}
+
+function loadreadystatechange(xhr, use) {
+  // listen to changes in the request
+  xhr.onreadystatechange = function () {
+    // if the request is ready
+    if (xhr.readyState === 4) {
+      // get the cached html document
+      var cachedDocument = xhr._cachedDocument;
+
+      // ensure the cached html document based on the xhr response
+      if (!cachedDocument) {
+        cachedDocument = xhr._cachedDocument = document.implementation.createHTMLDocument('');
+
+        cachedDocument.body.innerHTML = xhr.responseText;
+
+        // ensure domains are the same, otherwise we'll have issues appending the
+        // element in IE 11
+        if (cachedDocument.domain !== document.domain) {
+          cachedDocument.domain = document.domain;
+        }
+
+        xhr._cachedTarget = {};
+      }
+
+      // clear the xhr embeds list and embed each item
+      xhr._embeds.splice(0).map(function (item) {
+        // get the cached target
+        var target = xhr._cachedTarget[item.id];
+
+        // ensure the cached target
+        if (!target) {
+          target = xhr._cachedTarget[item.id] = cachedDocument.getElementById(item.id);
+        }
+
+        // embed the target into the svg
+        embed(item.parent, item.svg, target, use);
+      });
+    }
+  };
+
+  // test the ready state change immediately
+  xhr.onreadystatechange();
+}
+
+function svg4everybody(rawopts) {
+  var opts = Object(rawopts);
+
+  // create legacy support variables
+  var nosvg;
+  var fallback;
+
+  // if running with legacy support
+  if (LEGACY_SUPPORT) {
+    // configure the fallback method
+    fallback = opts.fallback || function (src) {
+      return src.replace(/\?[^#]+/, '').replace('#', '.').replace(/^\./, '') + '.png' + (/\?[^#]+/.exec(src) || [''])[0];
+    };
+
+    // set whether to shiv <svg> and <use> elements and use image fallbacks
+    nosvg = 'nosvg' in opts ? opts.nosvg : /\bMSIE [1-8]\b/.test(navigator.userAgent);
+
+    // conditionally shiv <svg> and <use>
+    if (nosvg) {
+      document.createElement('svg');
+      document.createElement('use');
+    }
+  }
+
+  // set whether the polyfill will be activated or not
+  var polyfill;
+  var olderIEUA = /\bMSIE [1-8]\.0\b/;
+  var newerIEUA = /\bTrident\/[567]\b|\bMSIE (?:9|10)\.0\b/;
+  var webkitUA = /\bAppleWebKit\/(\d+)\b/;
+  var olderEdgeUA = /\bEdge\/12\.(\d+)\b/;
+  var edgeUA = /\bEdge\/.(\d+)\b/;
+  //Checks whether iframed
+  var inIframe = window.top !== window.self;
+
+  if ('polyfill' in opts) {
+    polyfill = opts.polyfill;
+  } else if (LEGACY_SUPPORT) {
+    polyfill = olderIEUA.test(navigator.userAgent) || newerIEUA.test(navigator.userAgent) || (navigator.userAgent.match(olderEdgeUA) || [])[1] < 10547 || (navigator.userAgent.match(webkitUA) || [])[1] < 537 || edgeUA.test(navigator.userAgent) && inIframe;
+  } else {
+    polyfill = newerIEUA.test(navigator.userAgent) || (navigator.userAgent.match(olderEdgeUA) || [])[1] < 10547 || (navigator.userAgent.match(webkitUA) || [])[1] < 537 || edgeUA.test(navigator.userAgent) && inIframe;
+  }
+
+  // create xhr requests object
+  var requests = {};
+
+  // use request animation frame or a timeout to search the dom for svgs
+  var requestAnimationFrame = window.requestAnimationFrame || setTimeout;
+
+  // get a live collection of use elements on the page
+  var uses = document.getElementsByTagName('use');
+  var numberOfSvgUseElementsToBypass = 0;
+
+  function oninterval() {
+    // if all <use>s in the array are being bypassed, don't proceed.
+    if (numberOfSvgUseElementsToBypass && uses.length - numberOfSvgUseElementsToBypass <= 0) {
+      return void requestAnimationFrame(oninterval, 67);
+    }
+
+    // if there are <use>s to process, proceed.
+
+    // reset the bypass counter, since the counter will be incremented for every bypassed element,
+    // even ones that were counted before.
+    numberOfSvgUseElementsToBypass = 0;
+
+    // get the cached <use> index
+    var index = 0;
+
+    // while the index exists in the live <use> collection
+    while (index < uses.length) {
+      // get the current <use>
+      var use = uses[index];
+
+      // get the current <svg>
+      var parent = use.parentNode;
+      var svg = getSVGAncestor(parent);
+      var src = use.getAttribute('xlink:href') || use.getAttribute('href');
+
+      if (!src && opts.attributeName) {
+        src = use.getAttribute(opts.attributeName);
+      }
+
+      if (svg && src) {
+
+        // if running with legacy support
+        if (LEGACY_SUPPORT && nosvg) {
+          // create a new fallback image
+          var img = document.createElement('img');
+
+          // force display in older IE
+          img.style.cssText = 'display:inline-block;height:100%;width:100%';
+
+          // set the fallback size using the svg size
+          img.setAttribute('width', svg.getAttribute('width') || svg.clientWidth);
+          img.setAttribute('height', svg.getAttribute('height') || svg.clientHeight);
+
+          // set the fallback src
+          img.src = fallback(src, svg, use);
+
+          // replace the <use> with the fallback image
+          parent.replaceChild(img, use);
+        } else if (polyfill) {
+          if (!opts.validate || opts.validate(src, svg, use)) {
+            // remove the <use> element
+            parent.removeChild(use);
+
+            // parse the src and get the url and id
+            var srcSplit = src.split('#');
+            var url = srcSplit.shift();
+            var id = srcSplit.join('#');
+
+            // if the link is external
+            if (url.length) {
+              // get the cached xhr request
+              var xhr = requests[url];
+
+              // ensure the xhr request exists
+              if (!xhr) {
+                xhr = requests[url] = new XMLHttpRequest();
+
+                xhr.open('GET', url);
+
+                xhr.send();
+
+                xhr._embeds = [];
+              }
+
+              // add the svg and id as an item to the xhr embeds list
+              xhr._embeds.push({
+                parent: parent,
+                svg: svg,
+                id: id
+              });
+
+              // prepare the xhr ready state change event
+              loadreadystatechange(xhr, use);
+            } else {
+              // embed the local id into the svg
+              embed(parent, svg, document.getElementById(id), use);
+            }
+          } else {
+            // increase the index when the previous value was not "valid"
+            ++index;
+            ++numberOfSvgUseElementsToBypass;
+          }
+        }
+      } else {
+        // increase the index when the previous value was not "valid"
+        ++index;
+      }
+    }
+
+    // continue the interval
+    requestAnimationFrame(oninterval, 67);
+  }
+
+  // conditionally start the interval if the polyfill is active
+  if (polyfill) {
+    oninterval();
+  }
+}
+
+function getSVGAncestor(node) {
+  var svg = node;
+  while (svg.nodeName.toLowerCase() !== 'svg') {
+    svg = svg.parentNode;
+    if (!svg) {
+      break;
+    }
+  }
+  return svg;
+}
+
+
+
+
+
+/*!
  * jQuery JavaScript Library v3.5.1
  * https://jquery.com/
  *

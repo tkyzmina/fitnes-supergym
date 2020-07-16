@@ -35,29 +35,33 @@
       waitForAnimate: false,
       variableWidth: true,
       responsive: [{
-          breakpoint: 1199,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: true,
-          }
-        },
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
         }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
       ]
     });
   });
   // // imask
+  /* eslint-disable */
+
   var element = document.getElementById('tel');
   var maskOptions = {
     mask: '+{7}(000)000-00-00'
   };
   var mask = IMask(element, maskOptions);
+
+  /* eslint-enable */
   // imask end
 
 
