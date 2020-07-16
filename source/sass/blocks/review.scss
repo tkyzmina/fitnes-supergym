@@ -1,7 +1,7 @@
 .review {
   width: 1200px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   padding-top: 28px;
   padding-left: 20px;
   padding-right: 20px;
@@ -31,8 +31,8 @@
 .review__item {
   display: flex;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
-  margin-bottom: 20px;
   padding: 62px;
   padding-bottom: 57px;
   background: #1c3374;
@@ -79,6 +79,14 @@
 .slick-slide {
   width: 560px;
   height: auto;
+
+  &:first-child {
+    height: 100%;
+  }
+}
+
+.slick-slide>div {
+  height: 100%;
 }
 
 .slick-track {
@@ -87,7 +95,7 @@
 
 .review__wrapper .slick-arrow {
   position: absolute;
-  top: 50%;
+  top: 53%;
   width: 18px;
   height: 32px;
   margin-top: -25px;
@@ -121,7 +129,7 @@
 @media (max-width: 1199px) {
   .review {
     width: 768px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   }
 
   .review__wrapper {
@@ -158,7 +166,7 @@
 @media (max-width: 767px) {
   .review {
     width: 320px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 
   .review__wrapper {
@@ -180,6 +188,8 @@
 
   .review__image {
     position: absolute;
+    width: 68px;
+    height: 68px;
     top: 40px;
     left: 41px;
   }

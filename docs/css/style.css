@@ -374,7 +374,15 @@ img {
   overflow: hidden; }
 
 .footer-down {
-  min-height: calc(100vh - 108px); }
+  min-height: calc(100vh - 107px); }
+
+@media (max-width: 1199px) {
+  .footer-down {
+    min-height: calc(100vh - 113px); } }
+
+@media (max-width: 767px) {
+  .footer-down {
+    min-height: calc(100vh - 258px); } }
 
 *::-webkit-input-placeholder {
   color: #ffffff; }
@@ -1186,10 +1194,10 @@ img {
     top: 41%;
     left: 52%; } }
 
-.tickets__item--hide {
+.tickets__tab--hide {
   display: none; }
 
-.tickets__item--show {
+.tickets__tab--show {
   display: block; }
 
 .competitions {
@@ -2206,7 +2214,7 @@ img {
 .review {
   width: 1200px;
   margin: 0 auto;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   padding-top: 28px;
   padding-left: 20px;
   padding-right: 20px; }
@@ -2235,8 +2243,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
-  margin-bottom: 20px;
   padding: 62px;
   padding-bottom: 57px;
   background: #1c3374; }
@@ -2275,6 +2283,11 @@ img {
 .slick-slide {
   width: 560px;
   height: auto; }
+  .slick-slide:first-child {
+    height: 100%; }
+
+.slick-slide > div {
+  height: 100%; }
 
 .slick-track {
   display: -webkit-box;
@@ -2283,7 +2296,7 @@ img {
 
 .review__wrapper .slick-arrow {
   position: absolute;
-  top: 50%;
+  top: 53%;
   width: 18px;
   height: 32px;
   margin-top: -25px;
@@ -2312,7 +2325,7 @@ img {
 @media (max-width: 1199px) {
   .review {
     width: 768px;
-    margin-bottom: 80px; }
+    margin-bottom: 100px; }
   .review__wrapper {
     width: 606px; }
   .review__item {
@@ -2333,7 +2346,7 @@ img {
 @media (max-width: 767px) {
   .review {
     width: 320px;
-    margin-bottom: 50px; }
+    margin-bottom: 70px; }
   .review__wrapper {
     width: 226px;
     padding: 0; }
@@ -2347,6 +2360,8 @@ img {
     padding: 56px 19px 37px; }
   .review__image {
     position: absolute;
+    width: 68px;
+    height: 68px;
     top: 40px;
     left: 41px; }
   .review__name {

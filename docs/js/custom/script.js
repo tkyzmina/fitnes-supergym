@@ -63,59 +63,40 @@
 
   var coaches = document.querySelectorAll('.coaches__item');
   var review = document.querySelectorAll('.review__item');
-  var ticketsBtnList = document.querySelectorAll('.tickets__button');
+  var tabsBtnList = document.querySelectorAll('.tickets__button');
   var allCardsList = document.querySelectorAll('.tickets__item');
-  var oneMontList = document.querySelectorAll('.tickets__item--one');
 
-  coaches.forEach(function (element) {
-    element.classList.remove('no-js');
+  coaches.forEach(function (item) {
+    item.classList.remove('no-js');
   });
-  review.forEach(function (element) {
-    element.classList.remove('no-js');
-  });
-
-  oneMontList.forEach(function (element) {
-    element.classList.remove('tickets__item--hide');
-    element.classList.add('tickets__item--show');
+  review.forEach(function (elem) {
+    elem.classList.remove('no-js');
   });
 
-  var hideTickets = function () {
-    for (var i = 0, len = allCardsList.length; i < len; i++) {
-      allCardsList[i].classList.remove('tickets__item--show');
-      allCardsList[i].classList.add('tickets__item--hide');
-    }
-  };
+  allCardsList.forEach(function (el) {
+    el.classList.remove('tickets__item--show');
+    el.classList.remove('tickets__item--hide');
+  });
 
-  ticketsBtnList.forEach(function (element) {
-    element.addEventListener('click', function () {
+
+  tabsBtnList.forEach(function (button) {
+    button.addEventListener('click', function () {
       var ticketsBtnActive = document.querySelector('.tickets__button--active');
-      var sixMontList = document.querySelectorAll('.tickets__item--six');
-      var yearList = document.querySelectorAll('.tickets__item--year');
-
       ticketsBtnActive.classList.remove('tickets__button--active');
-      element.classList.add('tickets__button--active');
+      button.classList.add('tickets__button--active');
 
-      hideTickets();
+      var dataTab = button.getAttribute('data-tab');
+      var tabsList = document.querySelectorAll('.tickets__tab');
 
-      if (element.id === 'one-month') {
-        oneMontList.forEach(function (elem) {
-          elem.classList.remove('tickets__item--hide');
-          elem.classList.add('tickets__item--show');
-        });
-      }
-
-      if (element.id === 'six-month') {
-        sixMontList.forEach(function (el) {
-          el.classList.remove('tickets__item--hide');
-          el.classList.add('tickets__item--show');
-        });
-      }
-
-      if (element.id === 'year') {
-        yearList.forEach(function (e) {
-          e.classList.remove('tickets__item--hide');
-          e.classList.add('tickets__item--show');
-        });
+      for (var i = 0; i < tabsList.length; i++) {
+        // eslint-disable-next-line
+        if (dataTab == i) {
+          tabsList[i].classList.add('tickets__tab--show');
+          tabsList[i].classList.remove('tickets__tab--hide');
+        } else {
+          tabsList[i].classList.remove('tickets__tab--show');
+          tabsList[i].classList.add('tickets__tab--hide');
+        }
       }
     });
   });

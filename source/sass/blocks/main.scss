@@ -45,7 +45,19 @@ img {
 }
 
 .footer-down {
-  min-height: calc(100vh - 108px);
+  min-height: calc(100vh - 107px);
+}
+
+@media (max-width: 1199px) {
+  .footer-down {
+    min-height: calc(100vh - 113px);
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-down {
+    min-height: calc(100vh - 258px);
+  }
 }
 
 *::-webkit-input-placeholder {
