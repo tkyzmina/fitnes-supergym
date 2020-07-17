@@ -1963,7 +1963,8 @@ img {
 
 .sale__image {
   background-image: url("../img/sale-desktop.jpg");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .sale__block {
   margin-bottom: 40px;

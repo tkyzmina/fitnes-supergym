@@ -105,4 +105,14 @@
     });
   });
 
+  var anchor = document.querySelector('a[href^="#tickets"]');
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault();
+    var block = anchor.getAttribute('href');
+    document.querySelector('' + block).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+
 })();

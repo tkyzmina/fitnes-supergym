@@ -1,4 +1,5 @@
 /* eslint-disable */
+/* eslint eqeqeq: false*/
 
 /*!
  * @copyright Copyright (c) 2017 IcoMoon.io
